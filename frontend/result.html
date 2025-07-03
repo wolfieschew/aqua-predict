@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaPredict | Hasil Prediksi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#0a1128] to-[#1a2a6c] min-h-screen text-gray-100"
+  >
+    <!-- Navbar -->
+    <nav class="container mx-auto px-8 py-6 flex justify-between items-center">
+      <div
+        class="flex items-center text-3xl font-bold bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+      >
+        <i class="fas fa-tint mr-2 text-4xl"></i>
+        <span>AquaPredict</span>
+      </div>
+      <div>
+        <a
+          href="input.html"
+          class="mr-4 text-gray-300 hover:text-white transition"
+        >
+          <i class="fas fa-redo mr-1"></i> Analisis Baru
+        </a>
+        <a href="index.html" class="text-gray-300 hover:text-white transition">
+          <i class="fas fa-home mr-1"></i> Home
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-8 py-8">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header Hasil -->
+        <div class="text-center mb-12">
+          <div class="inline-block p-3 rounded-full bg-[#00c6ff]/10 mb-4">
+            <i
+              class="fas fa-check-circle text-4xl text-[#00c6ff] animate-bounce-slow"
+            ></i>
+          </div>
+          <h2
+            class="text-4xl font-bold mb-4 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+          >
+            Analisis Selesai
+          </h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+            Hasil analisis kualitas air Anda sudah siap. Di bawah ini adalah
+            prediksi detail.
+          </p>
+        </div>
+
+        <!-- Ringkasan -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div
+            class="col-span-2 bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl"
+          >
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+              <i class="fas fa-vial mr-2 text-[#00c6ff]"></i>
+              Ringkasan Kualitas Air
+            </h3>
+
+            <div class="flex flex-col md:flex-row items-center mb-8">
+              <div
+                class="w-32 h-32 rounded-full bg-[#00c6ff]/10 flex items-center justify-center mb-4 md:mb-0 md:mr-8"
+              >
+                <span
+                  class="text-4xl font-bold bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+                  >85%</span
+                >
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold mb-2">Aman untuk Dikonsumsi</h4>
+                <p class="text-gray-400 mb-4">
+                  Berdasarkan 21 parameter yang dianalisis, sampel ini memenuhi
+                  85% standar keamanan.
+                </p>
+                <div class="progress-bar w-full mb-2">
+                  <div class="progress-fill" style="width: 85%"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>Rendah Risiko</span>
+                  <span>Tinggi Risiko</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-[#00c6ff]/5 p-4 rounded-lg border border-[#00c6ff]/20"
+              >
+                <div data-safe-count class="text-[#00c6ff] mb-1">
+                  <i class="fas fa-check-circle mr-1"></i>
+                  <span>0 Parameter</span>
+                </div>
+
+                <p class="text-sm text-gray-400">Dalam batas aman</p>
+              </div>
+              <div
+                class="bg-[#ff2d75]/5 p-4 rounded-lg border border-[#ff2d75]/20"
+              >
+                <div data-risk-count class="text-[#ff2d75] mb-1">
+                  <i class="fas fa-exclamation-triangle mr-1"></i>
+                  <span>0 Parameter</span>
+                </div>
+
+                <h4 data-model-name class="font-medium mb-2">Loading...</h4>
+                <p class="text-sm text-gray-400">Perlu perhatian</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl"
+          >
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+              <i class="fas fa-robot mr-2 text-[#00c6ff]"></i>
+              Informasi Model
+            </h3>
+            <div class="mb-6">
+              <h4 class="font-medium mb-2" id="modelName">Loading...</h4>
+              <p class="text-sm text-gray-400 mb-4" id="modelAccuracy">
+                Model dengan akurasi <span id="accuracyValue">0</span>% pada
+                data validasi
+              </p>
+              <div class="progress-bar w-full">
+                <div
+                  class="progress-fill"
+                  id="accuracyBar"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Parameter Kunci</h4>
+              <div class="flex flex-wrap gap-2" id="keyParameters">
+                <!-- Key parameters will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis Detail -->
+        <div
+          class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl mb-12"
+        >
+          <h3 class="text-xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-chart-bar mr-2 text-[#00c6ff]"></i>
+            Analisis Parameter
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table
+              class="min-w-full divide-y divide-white/10"
+              id="parameterTable"
+            >
+              <thead>
+                <tr class="text-left text-sm text-gray-300">
+                  <th class="px-6 py-3">Parameter</th>
+                  <th class="px-6 py-3">Nilai</th>
+                  <th class="px-6 py-3">Kisaran Aman</th>
+                  <th class="px-6 py-3">Status</th>
+                  <th class="px-6 py-3">Dampak</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dynamic content will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Rekomendasi -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div
+            class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl"
+          >
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+              <i class="fas fa-lightbulb mr-2 text-[#00c6ff]"></i>
+              Rekomendasi
+            </h3>
+            <ul class="space-y-4" id="recommendationsList"></ul>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl"
+          >
+            <h3 class="text-xl font-semibold mb-6 flex items-center">
+              <i class="fas fa-download mr-2 text-[#00c6ff]"></i>
+              Unduh Laporan
+            </h3>
+            <p class="text-gray-400 mb-6">
+              Simpan atau bagikan laporan analisis kualitas air lengkap:
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                class="px-4 py-2 rounded-lg bg-[#00c6ff]/10 border border-[#00c6ff] text-[#00c6ff] hover:bg-[#00c6ff]/20 transition flex items-center justify-center"
+              >
+                <i class="fas fa-file-pdf mr-2"></i> PDF
+              </button>
+              <button
+                class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition flex items-center justify-center"
+              >
+                <i class="fas fa-file-csv mr-2"></i> CSV
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prediksi Per Baris -->
+        <div
+          class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-6 shadow-xl mb-8"
+        >
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fas fa-list-ol mr-2 text-[#00c6ff]"></i>
+            Prediksi Detail Per Baris
+          </h3>
+
+          <div class="overflow-x-auto">
+            <table
+              class="min-w-full divide-y divide-white/10"
+              id="predictionsTable"
+            >
+              <thead>
+                <tr class="text-left text-sm text-gray-300">
+                  <th class="px-4 py-3">#</th>
+                  <th class="px-4 py-3">pH</th>
+                  <th class="px-4 py-3">Ammonia</th>
+                  <th class="px-4 py-3">Timbal</th>
+                  <th class="px-4 py-3">Kekeruhan</th>
+                  <th class="px-4 py-3">Prediksi</th>
+                  <th class="px-4 py-3">Kepercayaan</th>
+                  <th class="px-4 py-3">Detail</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-8 py-8 text-center text-gray-400">
+      <p>© 2023 AquaPredict. Hak cipta dilindungi.</p>
+    </footer>
+    // Replace the static script with this dynamic version
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const result = JSON.parse(localStorage.getItem("predictionResult"));
+
+        if (!result || result.status !== "success") {
+          window.location.href = "input.html";
+          return;
+        }
+
+        try {
+          updateModelInfo(result);
+          // Update confidence score
+          const confidenceScore = Math.round(result.confidence[0] * 100);
+          document.querySelector(
+            ".w-32.h-32 span"
+          ).textContent = `${confidenceScore}%`;
+
+          // Update safe/risk parameter counts
+          document.querySelector(
+            "[data-safe-count]"
+          ).textContent = `${result.safe_parameters} Parameter`;
+          document.querySelector(
+            "[data-risk-count]"
+          ).textContent = `${result.risk_parameters} Parameter`;
+
+          // Update model info
+          const modelName = result.model_used
+            .split("_")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
+          document.querySelector("[data-model-name]").textContent = modelName;
+
+          // Update parameter table
+          const tableBody = document.querySelector("#parameterTable tbody");
+          tableBody.innerHTML = result.parameters
+            .map(
+              (param) => `
+            <tr>
+                <td class="px-6 py-4 font-medium">${param.name}</td>
+                <td class="px-6 py-4">${param.value}</td>
+                <td class="px-6 py-4">${param.safe_range}</td>
+                <td class="px-6 py-4">
+                    <span class="parameter-badge ${getStatusClass(
+                      param.status
+                    )}">
+                        <i class="fas ${getStatusIcon(param.status)} mr-1"></i>
+                        ${param.status}
+                    </span>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="progress-bar w-full">
+                        <div class="progress-fill ${getProgressClass(
+                          param.status
+                        )}"
+                             style="width: ${param.impact_score}%"></div>
+                    </div>
+                </td>
+            </tr>
+        `
+            )
+            .join("");
+
+          // Update recommendations
+          const recommendations = generateRecommendations(result.parameters);
+          document.querySelector("#recommendationsList").innerHTML =
+            recommendations;
+
+          // Update predictions table
+          updatePredictionsTable(result);
+        } catch (error) {
+          console.error("Error updating results:", error);
+          alert("Error displaying results. Please try again.");
+        }
+      });
+
+      function updateModelInfo(result) {
+        // Format model name
+        const modelName = result.model_used
+          .split("_")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+
+        // Get accuracy from the highest confidence value
+        const accuracy = Math.round(Math.max(...result.confidence) * 100);
+
+        // Update model name and accuracy
+        document.getElementById("modelName").textContent = modelName;
+        document.getElementById("accuracyValue").textContent = accuracy;
+        document.getElementById("accuracyBar").style.width = `${accuracy}%`;
+
+        // Get key parameters (parameters with highest impact scores)
+        const keyParams = result.parameters
+          .sort((a, b) => b.impact_score - a.impact_score)
+          .slice(0, 4)
+          .map(
+            (param) => `
+            <span class="parameter-badge bg-[#00c6ff]/10 text-[#00c6ff] border border-[#00c6ff]/20">
+                ${param.name}
+            </span>
+        `
+          )
+          .join("");
+
+        // Update key parameters
+        document.getElementById("keyParameters").innerHTML = keyParams;
+      }
+
+      // Update getModelDescription function
+      function getModelDescription(modelName) {
+        const descriptions = {
+          random_forest: "Model ensemble dengan pendekatan voting",
+          neural_network: "Model deep learning untuk pola kompleks",
+          decision_tree: "Model dengan struktur pohon keputusan",
+          knn: "Model berbasis kesamaan pola data",
+          xgboost: "Model gradient boosting performa tinggi",
+        };
+        return (
+          descriptions[modelName.toLowerCase()] || "Model analisis kualitas air"
+        );
+      }
+
+      function getStatusClass(status) {
+        const classes = {
+          Normal: "bg-green-500/10 text-green-500 border-green-500/20",
+          Sedang: "bg-yellow-500/10 text-yellow-500 border-yellow-500/20",
+          Tinggi: "bg-red-500/10 text-red-500 border-red-500/20",
+        };
+        return classes[status] || "";
+      }
+
+      function getStatusIcon(status) {
+        const icons = {
+          Normal: "fa-check",
+          Sedang: "fa-exclamation-triangle",
+          Tinggi: "fa-times",
+        };
+        return icons[status] || "fa-question";
+      }
+
+      function getProgressClass(status) {
+        const classes = {
+          Normal: "bg-green-500",
+          Sedang: "bg-yellow-500",
+          Tinggi: "bg-red-500",
+        };
+        return classes[status] || "";
+      }
+
+      function generateRecommendations(parameters) {
+        return parameters
+          .filter((param) => param.status !== "Normal")
+          .map((param) => {
+            const icon =
+              param.status === "Tinggi" ? "exclamation-triangle" : "filter";
+            const action =
+              param.status === "Tinggi"
+                ? "Segera lakukan treatment"
+                : "Pasang filter untuk menurunkan kadar";
+
+            return `
+                <li class="flex items-start">
+                    <i class="fas fa-${icon} text-[#00c6ff] mr-3 mt-1"></i>
+                    <span>${action} ${param.name.toLowerCase()}</span>
+                </li>
+            `;
+          })
+          .join("");
+      }
+
+      function updatePredictionsTable(result) {
+        const tableBody = document.querySelector("#predictionsTable tbody");
+        if (!tableBody) return;
+
+        const rows = result.predictions
+          .map((prediction, index) => {
+            const confidence = Math.round(result.confidence[index] * 100);
+            const params = result.parameters[index] || {};
+
+            return `
+            <tr>
+                <td class="px-4 py-4 font-mono">${index + 1}</td>
+                <td class="px-4 py-4">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full 
+                        ${
+                          prediction
+                            ? "bg-green-500/10 text-green-500"
+                            : "bg-red-500/10 text-red-500"
+                        }">
+                        <i class="fas ${
+                          prediction ? "fa-check" : "fa-times"
+                        }-circle mr-1"></i>
+                        ${prediction ? "Aman" : "Tidak Aman"}
+                    </span>
+                </td>
+                <td class="px-4 py-4">
+                    <div class="flex items-center">
+                        <div class="w-16 bg-white/10 rounded h-2 mr-2">
+                            <div class="bg-${
+                              prediction ? "green" : "red"
+                            }-500 h-2 rounded" 
+                                 style="width: ${confidence}%"></div>
+                        </div>
+                        <span class="text-sm">${confidence}%</span>
+                    </div>
+                </td>
+            </tr>
+        `;
+          })
+          .join("");
+
+        tableBody.innerHTML = rows;
+      }
+    </script>
+  </body>
+</html>

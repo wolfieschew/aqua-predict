@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaPredict | ML Models</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#0a1128] to-[#1a2a6c] min-h-screen text-gray-100"
+  >
+    <!-- Navbar -->
+    <nav class="container mx-auto px-8 py-6 flex justify-between items-center">
+      <div
+        class="flex items-center text-3xl font-bold bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+      >
+        <i class="fas fa-tint mr-2 text-4xl"></i>
+        <span>AquaPredict</span>
+      </div>
+      <div class="flex gap-8">
+        <a
+          href="index.html"
+          class="text-gray-100 font-medium hover:text-[#00c6ff] transition"
+          >Home</a
+        >
+        <!-- <a href="#" class="text-gray-100 font-medium hover:text-[#00c6ff] transition">Features</a> -->
+        <a
+          href="kerja.html"
+          class="text-gray-100 font-medium hover:text-[#00c6ff] transition"
+          >How It Works</a
+        >
+        <a
+          href="model.html"
+          class="text-gray-100 font-medium text-[#00c6ff] transition"
+          >Models</a
+        >
+        <a
+          href="aboutUs.html"
+          class="text-gray-100 font-medium hover:text-[#00c6ff] transition"
+          >About us</a
+        >
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-8 py-12">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+        >
+          Our Machine Learning Models
+        </h1>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+          AquaPredict menggunakan berbagai algoritma canggih untuk memastikan
+          prediksi kualitas air yang akurat. Setiap model memiliki keunggulan
+          dalam menganalisis aspek berbeda dari parameter air.
+        </p>
+      </div>
+
+      <!-- Model Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Random Forest Card -->
+        <div class="model-card bg-white/5 backdrop-blur-lg rounded-xl p-8">
+          <div class="model-icon bg-[#00c6ff]/10">
+            <i class="fas fa-tree text-2xl text-[#00c6ff]"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Random Forest</h3>
+          <p class="text-gray-400 mb-4">
+            Kumpulan pohon keputusan yang memberikan prediksi kuat dengan
+            merata-ratakan banyak model, mengurangi overfitting dan menangani
+            interaksi kompleks antar parameter.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="feature-badge bg-[#00c6ff]/10 text-[#00c6ff]">
+              <i class="fas fa-bullseye mr-1"></i> Accuracy: 94%
+            </span>
+            <span class="feature-badge bg-[#00c6ff]/10 text-[#00c6ff]">
+              <i class="fas fa-clock mr-1"></i> Fast Training
+            </span>
+            <span class="feature-badge bg-[#00c6ff]/10 text-[#00c6ff]">
+              <i class="fas fa-project-diagram mr-1"></i> Handles Non-linearity
+            </span>
+          </div>
+          <button
+            class="w-full py-2 rounded-lg bg-[#00c6ff]/10 border border-[#00c6ff] text-[#00c6ff] hover:bg-[#00c6ff]/20 transition"
+          >
+            Detail Teknis Model
+          </button>
+        </div>
+
+        <!-- Neural Network Card -->
+        <div class="model-card bg-white/5 backdrop-blur-lg rounded-xl p-8">
+          <div class="model-icon bg-purple-500/10">
+            <i class="fas fa-network-wired text-2xl text-purple-500"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Neural Network</h3>
+          <p class="text-gray-400 mb-4">
+            Model deep learning dengan banyak lapisan tersembunyi yang unggul
+            dalam mengidentifikasi hubungan kompleks dan non-linear antara
+            parameter air dan tingkat kontaminasi.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="feature-badge bg-purple-500/10 text-purple-400">
+              <i class="fas fa-brain mr-1"></i> Deep Learning
+            </span>
+            <span class="feature-badge bg-purple-500/10 text-purple-400">
+              <i class="fas fa-chart-line mr-1"></i> High Precision
+            </span>
+            <span class="feature-badge bg-purple-500/10 text-purple-400">
+              <i class="fas fa-microscope mr-1"></i> Complex Patterns
+            </span>
+          </div>
+          <button
+            class="w-full py-2 rounded-lg bg-purple-500/10 border border-purple-500 text-purple-400 hover:bg-purple-500/20 transition"
+          >
+            Detail Teknis Model
+          </button>
+        </div>
+
+        <!-- SVM Card -->
+        <div class="model-card bg-white/5 backdrop-blur-lg rounded-xl p-8">
+          <div class="model-icon bg-green-500/10">
+            <i class="fas fa-project-diagram text-2xl text-green-500"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Support Vector Machine</h3>
+          <p class="text-gray-400 mb-4">
+            Model deep learning dengan banyak lapisan tersembunyi yang unggul
+            dalam mengidentifikasi hubungan kompleks dan non-linear antara
+            parameter air dan tingkat kontaminasi.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="feature-badge bg-green-500/10 text-green-400">
+              <i class="fas fa-border-all mr-1"></i> High-Dimensional
+            </span>
+            <span class="feature-badge bg-green-500/10 text-green-400">
+              <i class="fas fa-shield-alt mr-1"></i> Robust
+            </span>
+            <span class="feature-badge bg-green-500/10 text-green-400">
+              <i class="fas fa-magic mr-1"></i> Kernel Methods
+            </span>
+          </div>
+          <button
+            class="w-full py-2 rounded-lg bg-green-500/10 border border-green-500 text-green-400 hover:bg-green-500/20 transition"
+          >
+            Detail Teknis Model
+          </button>
+        </div>
+      </div>
+
+      <!-- Model Comparison -->
+      <div
+        class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 shadow-xl"
+      >
+        <h2
+          class="text-3xl font-bold mb-8 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent"
+        >
+          Model Performance Comparison
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-white/10">
+            <thead>
+              <tr class="text-left text-gray-300">
+                <th class="px-6 py-3">Model</th>
+                <th class="px-6 py-3">Accuracy</th>
+                <th class="px-6 py-3">Precision</th>
+                <th class="px-6 py-3">Recall</th>
+                <th class="px-6 py-3">Training Time</th>
+                <th class="px-6 py-3">Best For</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10">
+              <tr>
+                <td class="px-6 py-4 font-medium">Random Forest</td>
+                <td class="px-6 py-4">
+                  <div class="flex items-center">
+                    <div class="w-24 bg-white/10 rounded h-2 mr-2">
+                      <div
+                        class="bg-[#00c6ff] h-2 rounded"
+                        style="width: 94%"
+                      ></div>
+                    </div>
+                    <span>94%</span>
+                  </div>
+                </td>
+                <td class="px-6 py-4">0.93</td>
+                <td class="px-6 py-4">0.95</td>
+                <td class="px-6 py-4">Medium</td>
+                <td class="px-6 py-4 text-gray-400">General purpose, robust</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">Neural Network</td>
+                <td class="px-6 py-4">
+                  <div class="flex items-center">
+                    <div class="w-24 bg-white/10 rounded h-2 mr-2">
+                      <div
+                        class="bg-purple-500 h-2 rounded"
+                        style="width: 96%"
+                      ></div>
+                    </div>
+                    <span>96%</span>
+                  </div>
+                </td>
+                <td class="px-6 py-4">0.97</td>
+                <td class="px-6 py-4">0.95</td>
+                <td class="px-6 py-4">Long</td>
+                <td class="px-6 py-4 text-gray-400">Complex patterns</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">SVM</td>
+                <td class="px-6 py-4">
+                  <div class="flex items-center">
+                    <div class="w-24 bg-white/10 rounded h-2 mr-2">
+                      <div
+                        class="bg-green-500 h-2 rounded"
+                        style="width: 91%"
+                      ></div>
+                    </div>
+                    <span>91%</span>
+                  </div>
+                </td>
+                <td class="px-6 py-4">0.92</td>
+                <td class="px-6 py-4">0.90</td>
+                <td class="px-6 py-4">Long</td>
+                <td class="px-6 py-4 text-gray-400">High-dimensional data</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-8 py-12 text-center text-gray-400">
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+      </div>
+      <p>© 2023 AquaPredict. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const MODEL_ICONS = {
+        random_forest: { icon: "fa-tree", color: "[#00c6ff]" },
+        neural_network: { icon: "fa-network-wired", color: "purple-500" },
+        decision_tree: { icon: "fa-diagram-project", color: "green-500" },
+        knn: { icon: "fa-cluster", color: "yellow-500" },
+        xgboost: { icon: "fa-bolt", color: "red-500" },
+      };
+
+      async function loadModelDetails() {
+        try {
+          // Fetch models list
+          const response = await fetch(
+            "http://localhost:5000/available-models"
+          );
+          const data = await response.json();
+
+          if (data.status === "success") {
+            const modelCardsContainer = document.querySelector(".grid");
+            modelCardsContainer.innerHTML = ""; // Clear existing cards
+
+            // Create card for each model
+            data.models.forEach((modelName) => {
+              const displayName = modelName
+                .split("_")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ");
+
+              const iconConfig = MODEL_ICONS[modelName] || {
+                icon: "fa-robot",
+                color: "[#00c6ff]",
+              };
+
+              const card = `
+                    <div class="model-card bg-white/5 backdrop-blur-lg rounded-xl p-8">
+                        <div class="model-icon bg-${iconConfig.color}/10">
+                            <i class="fas ${iconConfig.icon} text-2xl text-${iconConfig.color}"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">${displayName}</h3>
+                        <div class="model-metrics mb-4">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="feature-badge bg-${iconConfig.color}/10 text-${iconConfig.color}">
+                                    <i class="fas fa-bullseye mr-1"></i>
+                                    Loading metrics...
+                                </span>
+                            </div>
+                        </div>
+                        <button data-model="${modelName}" 
+                                class="w-full py-2 rounded-lg bg-${iconConfig.color}/10 border 
+                                       border-${iconConfig.color} text-${iconConfig.color} 
+                                       hover:bg-${iconConfig.color}/20 transition">
+                            Detail Teknis Model
+                        </button>
+                    </div>
+                `;
+
+              modelCardsContainer.insertAdjacentHTML("beforeend", card);
+            });
+
+            // Add click handlers for detail buttons
+            document
+              .querySelectorAll(".model-card button")
+              .forEach((button) => {
+                button.addEventListener("click", function () {
+                  showModelDetails(this.dataset.model);
+                });
+              });
+
+            // Update comparison table
+            updateComparisonTable(data.models);
+          }
+        } catch (error) {
+          console.error("Error loading models:", error);
+          document.querySelector(".grid").innerHTML = `
+            <div class="col-span-full text-center text-red-500">
+                Error loading models. Please try again later.
+            </div>
+        `;
+        }
+      }
+
+      async function updateComparisonTable(models) {
+        try {
+          const response = await fetch("http://localhost:5000/model-metrics");
+          const metricsData = await response.json();
+
+          if (metricsData.status === "success") {
+            const tableBody = document.querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            models.forEach((modelName) => {
+              const metrics = metricsData.metrics[modelName];
+              const displayName = modelName
+                .split("_")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ");
+
+              const iconConfig = MODEL_ICONS[modelName] || {
+                color: "[#00c6ff]",
+              };
+
+              const row = `
+                    <tr>
+                        <td class="px-6 py-4 font-medium">${displayName}</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center">
+                                <div class="w-24 bg-white/10 rounded h-2 mr-2">
+                                    <div class="bg-${iconConfig.color} h-2 rounded" 
+                                         style="width: ${metrics.accuracy}%">
+                                    </div>
+                                </div>
+                                <span>${metrics.accuracy}%</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">${metrics.precision}</td>
+                        <td class="px-6 py-4">${metrics.recall}</td>
+                        <td class="px-6 py-4">${metrics.training_time}</td>
+                        <td class="px-6 py-4 text-gray-400">${metrics.best_for}</td>
+                    </tr>
+                `;
+
+              tableBody.insertAdjacentHTML("beforeend", row);
+            });
+          }
+        } catch (error) {
+          console.error("Error loading metrics:", error);
+          document.querySelector("tbody").innerHTML = `
+            <tr>
+                <td colspan="6" class="px-6 py-4 text-center text-red-500">
+                    Error loading metrics. Please try again later.
+                </td>
+            </tr>
+        `;
+        }
+      }
+      function showModelDetails(modelName) {
+        const displayName = modelName
+          .split("_")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+
+        alert(
+          `Detailed technical specifications for ${displayName}\n\nFetching from backend...`
+        );
+      }
+
+      // Load models when page loads
+      document.addEventListener("DOMContentLoaded", loadModelDetails);
+
+      // Add click functionality for model detail buttons
+      document.querySelectorAll(".model-card button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const modelName =
+            this.closest(".model-card").querySelector("h3").textContent;
+          alert(
+            `Detailed technical specifications for ${modelName} would be displayed here.\n\nIn a full implementation, this would show:\n- Hyperparameters\n- Feature importance\n- Architecture details\n- Training metrics`
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
